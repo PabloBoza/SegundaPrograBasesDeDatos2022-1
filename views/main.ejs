@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body style="background-color:#FFFFFF">
+
+  
+        <button class="btn" onclick="filtrarNombre()" > Filtrar por Nombre</button>
+       <input type="text" id="inNombre" placeholder="Filtrar por nombre">
+       <button class="btn" onclick="filtrarCantidad()" > Filtrar por Cantidad</button>
+       <input id="inCantidad" placeholder="Filtrar por Cantidad" type="number" step="1">
+       <button class="btn"><a class="a2"href="/AgregarArticulo"> AgregarArticulo</a></button>
+       <button class="btn"><a class="a2"href="/"> Salir</a></button>
+       <table id="TablaArticulos">
+         <tr class="header">
+           <th style="width:60%;">Nombre</th>
+           <th style="width:40%;">Precio</th>
+         </tr>
+         <%Articulos.recordset.forEach(function(Articulo, index){%>
+         <tr>
+           <td><%= Articulo.Nombre%></td>
+           <td><%= Articulo.Precio%></td>
+         </tr>
+         <%});%>
+       </table> 
+       
+
+
+
+       <script>
+        function filtrarNombre() {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("inNombre");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("TablaArticulos");
+          tr = table.getElementsByTagName("tr");
+        
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        function filtrarCantidad() {
+          // Declare variables
+          var input, input2, filter, table, tr, td, i, j, txtValue;
+          input = document.getElementById("inNombre");
+          input2 = document.getElementById("inCantidad");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("TablaArticulos");
+          tr = table.getElementsByTagName("tr");
+          j = 0
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1 && j < parseInt(input2.value)) {
+                tr[i].style.display = "";
+                j=j+1;
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
+</body>
+</html>
