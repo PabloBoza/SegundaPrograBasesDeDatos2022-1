@@ -1,4 +1,4 @@
-CREATE PROCEDURE EditarEmpleado 
+CREATE PROCEDURE sp_EditarEmpleado 
 				 @id int ,
 				 @idTipoDocumentacionIdentificacion int,
 				 @nombrePuesto varchar(64),

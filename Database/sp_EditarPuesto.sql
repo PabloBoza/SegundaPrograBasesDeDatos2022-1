@@ -1,4 +1,4 @@
-CREATE PROCEDURE EditarPuesto 
+CREATE PROCEDURE sp_EditarPuesto 
                  @id int ,
                  @Nombre varchar(64),
                  @SalarioXHora int
