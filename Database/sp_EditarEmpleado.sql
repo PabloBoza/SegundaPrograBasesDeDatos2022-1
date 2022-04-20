@@ -9,7 +9,7 @@ CREATE PROCEDURE sp_EditarEmpleado
 AS
 BEGIN
 UPDATE Empleado SET 
-	idTipoDocumentacionIdentidad=@idTipoDocumentacionIdentificacion,
+	IdTipo_Id_Doc=@idTipoDocumentacionIdentificacion,
 	NombrePuesto=@nombrePuesto,
 	idDepartamento=@idDepartamento,
 	ValorDocumentoIdentidad=@ValorDocumentoIdentidad,

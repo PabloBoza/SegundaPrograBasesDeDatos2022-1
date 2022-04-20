@@ -7,6 +7,6 @@ AS
 BEGIN
 UPDATE Puesto SET 
 	Nombre=@Nombre,
-    SalarioXHora=@SalarioXHora,
+    SalarioXHora=@SalarioXHora
 	WHERE Puesto.id=@id
 END

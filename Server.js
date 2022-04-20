@@ -7,10 +7,10 @@ var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 // database configuration
 var config = {
-    user: "useradmin",
-    password: "password",
+    user: "Pabloadmin",
+    password: "Arthas98",
     server: "localhost", 
-    database: "tarea 1",
+    database: "PlanillaObrera",
     port: 1433,
     trustServerCertificate: true
 };

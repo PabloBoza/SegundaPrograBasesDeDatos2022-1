@@ -2,7 +2,7 @@ module.exports = {
     getMainPage: (req, res)=>{
         var output = 0;
         let dbrequest = new sql.Request();
-        let dbquery = "EXEC sp_MostrarArticulos @output out";
+        let dbquery = "EXEC sp_MostrarPuesto @output out";
         dbrequest.output('output',sql.Int, output);
         dbrequest.query(dbquery,function(err,rows,fields){
             if (err) console.log(err)
